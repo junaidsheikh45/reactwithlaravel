@@ -1,14 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
-import {Button} from 'react-bootstrap'
+import Header from './Layout/Header';
+import {BrowserRouter, Route} from 'react-router-dom'
+import Login from './Page/Login'
+import Register from './Page/Register'
+import AddProduct from './Page/AddProduct'
+import UpdateProduct from './Page/UpdateProduct'
+
 
 function App() {
   return (
     <div className="App">
-      <div>
-        <h1 className="text-dark">DASHBOARD</h1>
-        <Button>Click Me</Button>
-      </div>
+      <BrowserRouter>
+        <Header />
+        {/* <h1>Dashboard</h1> */}
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/register">
+          <Register />
+        </Route>
+        <Route path="/add">
+          <AddProduct />
+        </Route>
+        <Route path="/update">
+          <UpdateProduct />
+        </Route>
+      </BrowserRouter>
     </div>
   );
 }
